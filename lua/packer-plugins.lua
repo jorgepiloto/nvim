@@ -13,6 +13,9 @@ return require('packer').startup(function()
   }
   use 'preservim/tagbar'
 
+  -- VimWiki for taking notes
+  use 'vimwiki/vimwiki'
+
   -- Git plugins
   use 'kdheepak/lazygit.nvim'
   use 'airblade/vim-gitgutter'
