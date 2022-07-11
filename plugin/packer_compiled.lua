@@ -154,6 +154,11 @@ _G.packer_plugins = {
     path = "/home/jorge/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
   },
+  vimwiki = {
+    loaded = true,
+    path = "/home/jorge/.local/share/nvim/site/pack/packer/start/vimwiki",
+    url = "https://github.com/vimwiki/vimwiki"
+  },
   volk = {
     loaded = true,
     path = "/home/jorge/.local/share/nvim/site/pack/packer/start/volk",
