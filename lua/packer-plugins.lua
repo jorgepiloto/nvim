@@ -14,7 +14,18 @@ return require('packer').startup(function()
   use 'preservim/tagbar'
 
   -- VimWiki for taking notes
-  use 'vimwiki/vimwiki'
+  use {
+    'vimwiki/vimwiki',
+    config = function()
+        vim.g.vimwiki_list = {
+            {
+                path = '/home/jorge/Ansys/vimwiki',
+                syntax = 'markdown',
+                ext = '.md',
+            }
+        }
+    end
+  }
 
   -- Git plugins
   use 'kdheepak/lazygit.nvim'
