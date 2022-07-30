@@ -3,7 +3,7 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- Colorschemes
+  -- Colorschemes and colorbar
   use 'jorgepiloto/volk'
 
   -- File navigation plugins
