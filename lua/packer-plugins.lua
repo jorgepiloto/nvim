@@ -27,6 +27,11 @@ return require('packer').startup(function()
     end
   }
 
+  -- TaskWarrior integration
+  use {
+    'tools-life/taskwiki'
+  }
+
   -- Git plugins
   use 'kdheepak/lazygit.nvim'
   use 'airblade/vim-gitgutter'
