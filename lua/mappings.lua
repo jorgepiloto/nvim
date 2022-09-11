@@ -8,8 +8,9 @@ end
 vim.g.mapleader = ","
 
 -- Execute and test files
-keymap_function("n", "<F5>", ":terminal python %<CR>")
-keymap_function("n", "<F6>", ":terminal pytest %<CR>")
+keymap_function("n", "<F5>", ":TermExec direction='float' cmd='clear && python % && echo && echo -n Press enter to continue... && read && exit'<CR>")
+keymap_function("n", "<leader>r", ":TermExec direction='float' cmd='clear && python % && echo && echo -n Press enter to continue... && read && exit'<CR>")
+keymap_function("n", "<F6>", ":TermExec direction='float' cmd='clear && pytest % && echo && echo -n Press enter to continue... && read && exit'<CR>")
 keymap_function("n", "<F8>", ":TagbarToggle<CR>")
 
 -- Telescope mappings
@@ -23,3 +24,10 @@ keymap_function("i", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>")
 keymap_function("s", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>")
 keymap_function("i", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>")
 keymap_function("s", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>")
+
+-- Get back to normal mode from terminal using <Esc>
+keymap_function("t", "<Esc>", [[<C-\><C-n>]])
+
+-- Quickly move accross buffers with CR+AvPag or CR+RePag
+keymap_function("n", "<c-PageUp>", ":bn<CR>")
+keymap_function("n", "<c-PageDown>", ":bp<CR>")

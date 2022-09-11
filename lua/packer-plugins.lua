@@ -6,6 +6,11 @@ return require('packer').startup(function()
   -- Colorschemes and colorbar
   use 'jorgepiloto/volk'
 
+  -- Integrate system terminal emulator in neovim
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup()
+  end}
+
   -- File navigation plugins
   use {
     'nvim-telescope/telescope.nvim',
@@ -25,11 +30,6 @@ return require('packer').startup(function()
             }
         }
     end
-  }
-
-  -- TaskWarrior integration
-  use {
-    'tools-life/taskwiki'
   }
 
   -- Git plugins
