@@ -6,6 +6,7 @@
 
 require("packer-plugins")
 require("mappings")
+require("autocmd")
 
 -- General configuration
 vim.opt.updatetime = 100
