@@ -8,6 +8,16 @@
 This repository contains Jorge's Neovim configuration. The configuration focuses
 on minimalism, efficiency, and productivity.
 
+
+## Installation
+
+Install this configuration by executing the following command:
+
+```text
+curl curl --proto '=https' --tlsv1.2 -sSf https://github.com/jorgepiloto/nvim/INSTALL | sh
+```
+
+
 ## About NEovimg configuration
 
 Neovim supports Lua, as opposite ot Vim, whcih only works with VimScript. Lua is
@@ -28,3 +38,5 @@ contains the following structure:
    | plugin/
    | after/plugin
 ```
+
+[The XDG Specification]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
