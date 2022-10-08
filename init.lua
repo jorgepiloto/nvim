@@ -5,7 +5,7 @@
 --]
 
 require("packer-plugins")
-require("mappings")
+require("keymaps")
 require("autocmd")
 
 -- General configuration
