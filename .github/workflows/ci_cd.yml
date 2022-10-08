@@ -37,3 +37,19 @@ jobs:
       - name: Run pre-commit
         run:
           pre-commit run --all-files --show-diff-on-failure
+
+  tests:
+    name: Test install
+    needs: [style]
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Install Git and checkout project
+        uses: actions/checkout@v3
+
+      - name: Install Neovim
+        run: sudo apt-get install neovim
+
+      - name: Install custom configuration
+        run: /bin/sh ./INSTALL
+

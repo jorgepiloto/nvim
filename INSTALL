@@ -66,7 +66,7 @@ fn_main ()
         # Prompt welcome message and ask user to proceed with the installer
         echo "Welcome to Jorge's Neovim Configuration installer."
         read -p "Would you like to proceed with the installation? [Y, n]? " proceed
-        if [[ $proceed != "Y" ]]; then echo $MSG_CANCEL && exit; fi
+        if ! [ "$proceed" = "Y" ]; then fn_cancel_installation; fi
 
         # Verify dependencies and XDG specification
         fn_check_dependencies || fn_cancel_installation

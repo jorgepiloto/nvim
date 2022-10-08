@@ -49,7 +49,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		"*.html",
 		"*.css",
 		"*.ini",
-		"*.yml",
 		"*.sh",
+		"*.yml",
 	},
 })
