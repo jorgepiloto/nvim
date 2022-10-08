@@ -5,6 +5,6 @@ repos:
   hooks:
     - id: stylua # or stylua-system / stylua-github
       args: [
-        --colum_width, '80'
+        --column-width, '80'
       ]
 
