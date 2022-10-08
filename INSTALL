@@ -1,0 +1,85 @@
+#!/bin/sh
+
+
+fn_cancel_installation ()
+{
+        # Echo cancellation message and return error code
+        local MSG_CANCEL="Cancelling installation process... Bye!"
+        echo $MSG_CANCEL && exit 1 
+}
+
+
+fn_check_xdg_specification ()
+{
+        # Define the XDG directories (if required)
+        export HOME="${HOME:-/home}"
+        export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+        export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+
+        # Create the directory specified by the XDG_CONFIG_HOME (if required)
+        local directories="$XDG_CONFIG_HOME $XDG_DATA_HOME"
+        for dir in ${directories};
+        do
+                echo -n "Creating $dir... "
+                mkdir -p $dir
+                echo "[ OK ]"
+        done
+}
+
+fn_check_dependencies ()
+{
+        echo "Verifying required dependencies are installed..."
+
+        dependencies="git nvim"
+        for dependency in ${dependencies};
+        do
+                echo -n "Checking $dependency... "
+
+                if ! [ -x "$(command -v $dependency)" ] 
+                then
+                        echo "[ FAIL ]"
+                        echo "Dependency $dependency not found!"
+                        exit 1
+                else
+                        echo "[ OK ]"
+                fi
+        done
+}
+
+fn_install_packer ()
+{
+        # See https://github.com/wbthomason/packer.nvim#quickstart
+        git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+        "${XDG_DATA_HOME}/nvim/site/pack/packer/start/packer.nvim"
+}
+
+
+fn_install_config ()
+{
+        # Clone the configuration to the desired XDG_CONFIG_HOME directory
+        git clone https://github.com/jorgepiloto/nvim "${XDG_CONFIG_HOME}/nvim"
+}
+
+
+fn_main ()
+{
+        # Prompt welcome message and ask user to proceed with the installer
+        echo "Welcome to Jorge's Neovim Configuration installer."
+        read -p "Would you like to proceed with the installation? [Y, n]? " proceed
+        if [[ $proceed != "Y" ]]; then echo $MSG_CANCEL && exit; fi
+
+        # Verify dependencies and XDG specification
+        fn_check_dependencies || fn_cancel_installation
+        fn_check_xdg_specification || fn_cancel_installation
+
+        # Install packer and custom configuration
+        fn_install_packer || fn_cancel_installation 
+        fn_install_config || fn_cancel_installation 
+
+        # Echo successfull installation message
+        echo "Installation process completed. Enjoy your new Noevim config!"
+}
+
+
+# Execute the main function of the script
+fn_main

@@ -14,7 +14,7 @@ on minimalism, efficiency, and productivity.
 Install this configuration by executing the following command:
 
 ```text
-curl curl --proto '=https' --tlsv1.2 -sSf https://github.com/jorgepiloto/nvim/INSTALL | sh
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/jorgepiloto/nvim/main/INSTALL | sh
 ```
 
 

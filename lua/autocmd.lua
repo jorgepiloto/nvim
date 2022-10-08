@@ -41,5 +41,15 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	callback = function()
 		set_indentation(4)
 	end,
-	pattern = { "*.lua", "*.c", "*.h", "*.py", "*.html", "*.css", "*.ini", "*.yml"},
+	pattern = {
+		"*.lua",
+		"*.c",
+		"*.h",
+		"*.py",
+		"*.html",
+		"*.css",
+		"*.ini",
+		"*.yml",
+		"*.sh",
+	},
 })
