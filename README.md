@@ -29,14 +29,21 @@ dotfiles are found inside the `$XDG_CONFIG_HOME/nvim` directory. This folder
 contains the following structure:
 
 ```tree
-|- nvim/
-   |- init.lua
-   |- lua/
-      |- base.lua
-      |- keymaps.lua
-      |- plugins.lua
-   | plugin/
-   | after/plugin
+nvim
+├── init.lua
+├── INSTALL
+├── lua
+│   ├── autocmd.lua
+│   ├── keymaps.lua
+│   └── packer-plugins.lua
+├── plugin
+│   ├── lsp-zero.lua
+│   ├── packer_compiled.lua
+│   ├── telescope.lua
+│   └── toggleterm.lua
+├── README.md
+└── _static
+    └── neovim_logo.png
 ```
 
 [The XDG Specification]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
