@@ -46,5 +46,6 @@ keymap_function("s", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>")
 keymap_function("t", "<Esc>", [[<C-\><C-n>]])
 
 -- Quickly move accross buffers with CR+AvPag or CR+RePag
-keymap_function("n", "<c-PageUp>", ":bn<CR>")
-keymap_function("n", "<c-PageDown>", ":bp<CR>")
+keymap_function("n", "<c-PageUp>", ":bp<CR>")
+keymap_function("n", "<c-PageDown>", ":bn<CR>")
+keymap_function("n", "<c-W>", ":bd<CR>")
