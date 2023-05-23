@@ -3,7 +3,6 @@ require("telescope").setup({
 	defaults = {
 		previewer = true,
 		file_ignore_patterns = {
-			"docker",
 			"doc/_build",
 			"__pycache__",
 			"venv",

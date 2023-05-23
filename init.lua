@@ -16,3 +16,6 @@ vim.opt.textwidth = 80
 vim.opt.expandtab = true
 vim.cmd("colorscheme volk")
 vim.cmd("set colorcolumn=80")
+
+-- Add local development
+-- vim.opt.runtimepath:append("path/to/plugin/development")
